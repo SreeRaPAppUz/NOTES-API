@@ -40,7 +40,7 @@ const createNote = (req, res) => {
         const { title, content } = req.body;
         const note = { id: currentId++, title, content };
         notes.push(note);
-        res.status(201).json(note);
+        res.status(201).json({ message: "Note created", note });
     } catch (error) {
         res.status(500).json({ error: "Failed to create note", details: error.message });
     }
@@ -72,7 +72,7 @@ const deleteNote = (req, res) => {
 
         if (index !== -1) {
             notes.splice(index, 1);
-            res.status(200).json({ message: "Note deleted" });
+            res.status(200).json({ message: "Note deleted", deletedId: id });
         } else {
             res.status(404).json({ error: "Note not found" });
         }
