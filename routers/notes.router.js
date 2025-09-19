@@ -10,7 +10,7 @@ router.get("/:id",getNote)
 
 router.post("/",validateNotes,createNote)
 
-router.patch("/:id",validateNotes,updateNote);
+router.patch("/:id",updateNote);
 
 router.delete("/:id",deleteNote);
 

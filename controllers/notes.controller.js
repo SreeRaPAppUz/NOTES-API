@@ -19,8 +19,6 @@ const getNotes = (req, res) => {
     }
 }
 
-
-
 const getNote = (req, res) => {
     try {
         const { id } = req.params;
